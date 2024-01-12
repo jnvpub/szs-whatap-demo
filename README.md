@@ -94,6 +94,35 @@ hook_completablefuture_patterns=whatap.v1.W.*
 ------------------------------------------------------------
 ```
 
+`whatap.v1.W.java` 파일 예시:
+
+```java
+[whatap.v1.W.java]
+------------------------------------------------------------
+...
+package whatap.v1;
+
+import java.util.concurrent.Future;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+
+public class W {
+    public static <T> Supplier<T> trace(Supplier<T> f) {
+        return f;
+    }
+    public static <T> Consumer<T> trace(Consumer<T> f) {
+        return f;
+    }
+    public static <T> Runnable trace(Runnable f) {
+        return f;
+    }
+    public static <T> Future<T> trace(Future<T> f) {
+        return f;
+    }
+}
+------------------------------------------------------------
+```
+
 `com.whatap.demo.service.AsyncService.java` 파일 예시:
 
 ```java
