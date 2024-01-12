@@ -36,3 +36,10 @@ GET http://localhost:8080/rxjava
 <> 2023-12-19T120326.200.txt
 <> 2023-12-19T120021.200.txt
 <> 2023-12-19T114759.200.txt
+
+
+###event
+GET http://localhost:8080/event
+
+###transactional event
+GET http://localhost:8080/transactional-event
