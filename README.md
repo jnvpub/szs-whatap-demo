@@ -10,6 +10,8 @@
 ## 실행방법
 아래 명령어를 실행하면 됩니다.
 
+--TEST-=TE-ST
+
 ```bash
 1. docker-compose -f demo-kafka.yml up -d
 2. docker-compose -f demo-mysql.yml up -d
