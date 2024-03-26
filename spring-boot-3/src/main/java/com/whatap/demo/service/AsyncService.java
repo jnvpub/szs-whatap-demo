@@ -4,6 +4,10 @@ package com.whatap.demo.service;
 import com.whatap.demo.jpa.AsyncEntity;
 import com.whatap.demo.jpa.AsyncRepository;
 import java.util.concurrent.CompletableFuture;
+
+import com.whatap.demo.service.client.FeignApiClient;
+import com.whatap.demo.service.client.RestTemplateApiClient;
+import com.whatap.demo.service.client.WebClientApiClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -13,6 +17,9 @@ import org.springframework.stereotype.Service;
 public class AsyncService {
 
   private final AsyncRepository asyncRepository;
+  private final FeignApiClient feignApiClient;
+  private final WebClientApiClient webClientApiClient;
+  private final RestTemplateApiClient restTemplateApiClient;
 
   @Async
   public CompletableFuture<String> processAsync() {
@@ -27,5 +34,13 @@ public class AsyncService {
       }
       return "Completed";
     });
+  }
+
+
+  @Async
+  public void externalApiCall() {
+    feignApiClient.getData();
+    webClientApiClient.getData();
+    restTemplateApiClient.getData();
   }
 }

@@ -17,4 +17,10 @@ public class AsyncController {
   public CompletableFuture<String> process() {
     return asyncService.processAsync();
   }
+
+  @GetMapping("/call")
+  public void externalApiCall() {
+    asyncService.externalApiCall();
+  }
+
 }
