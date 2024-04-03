@@ -45,4 +45,4 @@ GET http://localhost:8081/event
 GET http://localhost:8081/transactional-event
 
 ###### external call
-GET http://localhost:8080/call
+GET http://localhost:8081/call

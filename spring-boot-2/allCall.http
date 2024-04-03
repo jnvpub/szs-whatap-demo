@@ -46,3 +46,8 @@ GET http://localhost:8080/transactional-event
 
 ###### external call
 GET http://localhost:8080/call
+
+
+
+###### userId call
+GET http://localhost:8080/1
